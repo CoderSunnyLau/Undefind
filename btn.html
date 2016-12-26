@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        .btn{
+            position:relative;
+            width:90px;
+            height:30px;
+            overflow:hidden;
+            cursor:pointer;
+            font:bold 20px/30px "Calibri","Microsoft YaHei";
+            color:#D9D;
+            text-align:center;
+            user-select:none;
+            -webkit-user-select:none;/*webkit浏览器*/
+        }
+        .btn:hover{
+            color:#C36;
+        }
+		.circle{
+            width:0;
+            height:0;
+            background:#C36;
+            border-radius:50%;
+            position:absolute;
+            opacity:0.5;
+            left:50%;
+            top:50%;
+        }
+        button{
+            display:block;
+            width:80px;
+            height:30px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        button
+        <div class="circle"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var x,y;
+            $('.btn').click(function(event){
+                x = event.offsetX;
+                y = event.offsetY;
+                $('.circle').stop();
+                $('.circle').css({'width':0,'height':0,'marginTop':0,'marginLeft':0,'opacity':0.5});
+                $('.circle').animate({'left':x,'top':y,'width':'160px','height':'160px','marginTop':'-80px','marginLeft':'-80px','opacity':0},500,function(){
+                    $(this).css({'width':0,'height':0,'marginTop':0,'marginLeft':0,'opacity':0.5});
+                });
+            });
+        });
+    </script>
+</body>
+</html>
