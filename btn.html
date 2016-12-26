@@ -47,11 +47,11 @@
         $(document).ready(function(){
             var x,y;
             $('.btn').click(function(event){
-                x = event.offsetX;
-                y = event.offsetY;
+                x = event.offsetX + "px";
+                y = event.offsetY + "px";
                 $('.circle').stop();
-                $('.circle').css({'width':0,'height':0,'marginTop':0,'marginLeft':0,'opacity':0.5});
-                $('.circle').animate({'left':x,'top':y,'width':'160px','height':'160px','marginTop':'-80px','marginLeft':'-80px','opacity':0},500,function(){
+                $('.circle').css({'left':x,'top':y,'width':0,'height':0,'marginTop':0,'marginLeft':0,'opacity':0.5});
+                $('.circle').animate({'width':'160px','height':'160px','marginTop':'-80px','marginLeft':'-80px','opacity':0},500,function(){
                     $(this).css({'width':0,'height':0,'marginTop':0,'marginLeft':0,'opacity':0.5});
                 });
             });
